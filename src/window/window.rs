@@ -63,7 +63,7 @@ impl ConrodContext {
 // the drop order of its members.
 // Since the Window contains the OpenGL context, it must be dropped _after_ the state, and there's
 // no way to control that in a plain old closure.
-struct RenderLoopClosureImpl<S: State, F: Fn(f64, &mut Window, &mut S) -> bool> {
+pub struct RenderLoopClosureImpl<S: State, F: Fn(f64, &mut Window, &mut S) -> bool> {
     pub state: S,
     pub window: Window,
     pub closure: F,
